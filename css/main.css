@@ -1949,7 +1949,12 @@ html[data-useragent*='MSIE 10.0'] .home-scrolldown,
 }
 
 .about-bottom-image img {
-  vertical-align: bottom;
+  /* vertical-align: bottom; */
+  display: block;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
 }
 
 
