@@ -29,6 +29,26 @@
     <script src="js/modernizr.js"></script>
     <script src="js/pace.min.js"></script>
 
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.js"
+    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
+    <script>
+    function SubForm (){
+        $.ajax({
+            url:'https://api.apispreadsheets.com/data/8469/',
+            type:'post',
+            data:$("#mc-form").serializeArray(),
+            success: function(){
+            console.log("Form Data Submitted :)")
+            },
+            error: function(){
+            console.log("There was an error :(")
+            }
+        });
+    }
+    </script>
+
     <!-- favicons
 	================================================== -->
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
@@ -65,7 +85,7 @@
 				<li><a class="smoothscroll"  href="#download" title="download">Download</a></li>	
 			</ul>
 
-            <a href="https://forms.gle/2ks3M61zrp9PeFMa9" target="_blank" title="sign-up" class="button button-primary cta">Sign Up</a>
+            <a href="#footer-signup" target="_blank" title="sign-up" class="button button-primary cta">Learn More</a>
 		</nav>
 
 		<a class="header-menu-toggle" href="#"><span>Menu</span></a>    	
@@ -96,7 +116,22 @@
                             <span class="icon-play" aria-hidden="true"></span>
                             Our Prototype
                         </a>
-                    </div>                                         
+
+                        <a href="https://youtu.be/umIibcKOjAQ" data-lity class="button stroke">
+                            <span class="icon-play" aria-hidden="true"></span>
+                            Watch Video
+                        </a>
+                    </div>
+                    
+                    <div class="subscribe-form">
+
+                        <form id="mc-form">
+                            <div>
+                              <input type="email" style="background-color : #ededed;" value="" name="EMAIL" placeholder="Email Address" required="">
+                              <button onclick="SubForm()" class="button button-primary cta">Learn More</button>
+                            </div>
+                        </form>
+                    </div>
 
                 </div>
 
@@ -525,20 +560,22 @@
 
                 <div class="col-four md-1-2 tab-full footer-subscribe">
 
-                    <h4>Our Newsletter</h4>
+                    <h4>Learn More</h4>
 
-                    <p>Please stay tuned for our newsletter!.</p>
+                    <p>Your email address is safe with us. We will only use it to contact you to provide you with more information.</p>
 
                     <div class="subscribe-form">
                 
-                        <form id="mc-form" class="group" novalidate="true">
-
-                            <input type="email" value="" name="EMAIL" class="email" id="mc-email" placeholder="Email Address" required=""> 
-                
-                            <input type="submit" name="subscribe" value="Send">
-                
-                            <label for="mc-email" class="subscribe-message"></label>
-                
+                        <form id="mc-form">
+                            <div>
+                              <label>Email</label>
+                              <input type="email" value="" name="EMAIL" class="email" placeholder="Email Address" required="">
+                            </div>
+                          
+                            <div>
+                              <button onclick="SubForm()">Submit</button>
+                            </div>
+                          
                         </form>
 
                     </div>	      		
@@ -576,7 +613,7 @@
 
     <!-- Java Script
     ================================================== -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/jquery-2.1.3.min.js"></script>
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
 
