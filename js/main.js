@@ -233,6 +233,25 @@
 		});
 	};	
 
+
+	/* New Form
+	* ------------------------------------------------------ */
+	// var $form = $('form#mc-form'),
+    // url = 'https://script.google.com/macros/s/AKfycbyB6QxSA55hWP9VIB9BbK-YzQ6dx96iYppmFoqR3fpLiask_YKf1u-YFg/exec'
+
+	// $('#submit-form').on('click', function(e) {
+	// e.preventDefault();
+	// var jqxhr = $.ajax({
+	// 	url: url,
+	// 	method: "GET",
+	// 	dataType: "jsonp",
+	// 	data: $form.serializeObject()
+	// }).success(
+	// 	// do something
+	// 	console.log('it worked')
+	// );
+	// })
+
   
   /* Initialize
 	* ------------------------------------------------------ */

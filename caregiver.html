@@ -531,7 +531,7 @@
 
                     <div class="subscribe-form">
                 
-                        <form id="mc-form" class="group" novalidate="true">
+                        <!-- <form id="mc-form" class="group" novalidate="true">
 
                             <input type="email" value="" name="EMAIL" class="email" id="mc-email" placeholder="Email Address" required=""> 
                 
@@ -539,6 +539,19 @@
                 
                             <label for="mc-email" class="subscribe-message"></label>
                 
+                        </form> -->
+
+                        <form id="mc-form">
+  
+                            <div>
+                              <label>email</label>
+                              <input type="email" value="" name="EMAIL" class="email" id="mc-email" placeholder="Email Address" required="">
+                            </div>
+                          
+                            <div>
+                              <button type="submit" id="submit-form">Submit</button>
+                            </div>
+                          
                         </form>
 
                     </div>	      		
@@ -576,9 +589,27 @@
 
     <!-- Java Script
     ================================================== -->
-    <script src="js/jquery-2.1.3.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
+
+    <script>
+        var $form = $('form#mc-form'),
+        url = 'https://script.google.com/macros/s/AKfycbyB6QxSA55hWP9VIB9BbK-YzQ6dx96iYppmFoqR3fpLiask_YKf1u-YFg/exec'
+
+        $('#submit-form').on('click', function(e) {
+        e.preventDefault();
+        var jqxhr = $.ajax({
+            url: url,
+            method: "GET",
+            dataType: "jsonp",
+            data: $form.serialize()
+        }).success(
+            // do something
+            console.log('it worked')
+        );
+        })
+    </script>
 
 </body>
 
